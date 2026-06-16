@@ -30,27 +30,16 @@
 
 
             <plugin>
-
                 <groupId>org.apache.maven.plugins</groupId>
-
                 <artifactId>maven-jar-plugin</artifactId>
-
                 <version>3.2.0</version>
-
                 <configuration>
-
                     <archive>
-
-                        <manifestEntries>
-
-                            <Main-Class>org.example.MainClass</Main-Class>
-
-                        </manifestEntries>
-
+                        <manifest>
+                            <mainClass>org.example.Main</mainClass>
+                        </manifest>
                     </archive>
-
                 </configuration>
-
             </plugin>
 
 
@@ -98,11 +87,31 @@
 
             </plugin>
 
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+
+                <artifactId>maven-site-plugin</artifactId>
+
+                <version>3.12.1</version>
+
+            </plugin>
+
         </plugins>
 
     </build>
 
+    <distributionManagement>
 
+        <repository>
+
+            <id>local-repo</id>
+
+            <url>file:///D:/my-local-maven-repo</url>
+
+        </repository>
+
+    </distributionManagement>
 
 
 </project>
